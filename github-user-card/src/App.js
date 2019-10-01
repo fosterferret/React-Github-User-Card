@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
-import Followers from './Followers'
-import User from './User'
+import Followers from "./Followers";
+import User from "./User";
 import "./App.css";
 
 class App extends React.Component {
@@ -18,7 +18,7 @@ class App extends React.Component {
       .get("https://api.github.com/users/fosterferret")
       .then(response => {
         this.setState({ user: response.data });
-        console.log(this.state.user)
+        console.log(this.state.user);
       })
       .then(
         axios
@@ -39,8 +39,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="container">
-        <User user={this.state.user}/>
-        <Followers followers={this.state.followers}/>
+        <User user={this.state.user} />
+        <Followers followers={this.state.followers} />
       </div>
     );
   }
